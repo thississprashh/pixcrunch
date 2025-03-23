@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixCrunch - Image Compressor</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts for multilingual support -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+KR&family=Noto+Sans+Thai&family=Noto+Sans+JP&family=Noto+Sans+SC&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="logo.png" alt="SnapShrink Logo" class="logo">
+        <div class="settings">
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="fr">Français (French)</option>
+                    <option value="es">Español (Spanish)</option>
+                    <option value="ru">Русский (Russian)</option>
+                    <option value="pt">Português (Portuguese)</option>
+                    <option value="it">Italiano (Italian)</option>
+                    <option value="id">Bahasa Indonesia (Indonesian)</option>
+                    <option value="pl">Polski (Polish)</option>
+                    <option value="th">ไทย (Thai)</option>
+                    <option value="ko">한국어 (Korean)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1 data-lang="title">PixCrunch</h1>
+            <p data-lang="subtitle">Reduce your image sizes with ease.</p>
+        </header>
+        <div class="upload-card">
+            <input type="file" id="fileInput" multiple accept="image/*">
+            <label for="fileInput" class="upload-btn" data-lang="chooseImage">Choose the image</label>
+            <span class="upload-info" data-lang="dragDrop">or drag and drop here</span>
+        </div>
+        <div class="controls">
+            <button id="compressBtn" class="action-btn" data-lang="compressImage">Compress the image</button>
+            <button id="previewBtn" class="action-btn preview" data-lang="preview">Preview</button>
+            <button id="resetBtn" class="action-btn reset" data-lang="reset">Clear</button>
+        </div>
+        <div class="compression-level">
+            <label for="compressionSlider" data-lang="compressionLevel">Compression Level:</label>
+            <input type="range" id="compressionSlider" min="1" max="100" value="50">
+            <span id="compressionValue">50%</span>
+        </div>
+        <div class="output-format">
+            <label for="formatSelect" data-lang="outputFormat">Output Format:</label>
+            <select id="formatSelect">
+                <option value="jpeg">JPEG</option>
+                <option value="png">PNG</option>
+                <option value="webp">WebP</option>
+            </select>
+        </div>
+        <div id="progress" class="hidden">
+            <div class="progress-bar"></div>
+        </div>
+        <div id="status" data-lang="status"></div>
+        <div id="imageList" class="image-grid"></div>
+        <div id="previewArea" class="preview-area hidden">
+            <h3 data-lang="previewTitle">Preview</h3>
+            <div class="preview-item">
+                <img id="previewImage" src="" alt="Preview">
+                <p id="previewSize"></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p data-lang="footer">© 2025 PixCrunch. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
